@@ -1,7 +1,6 @@
 package com.kcl.example.springboot.web.dto;
 
 import com.kcl.example.springboot.domain.posts.Posts;
-import com.kcl.example.springboot.domain.posts.PostsRepository;
 import lombok.Getter;
 
 @Getter
