@@ -40,4 +40,6 @@ dependencies {
     // db 연동을 위한 jdbc 의존성 추가
     compile('org.springframework.session:spring-session-jdbc')
     testCompile("org.springframework.security:spring-security-test")
+    // MariaDb 드라이버 등록
+    compile("org.mariadb.jdbc:mariadb-java-client")
 }
