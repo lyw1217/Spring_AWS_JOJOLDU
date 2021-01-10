@@ -11,7 +11,7 @@ var main = {    // 변수의 속성으로 function 을 추가한 이유
             _this.update();
         });
 
-        $('#btn-delete').on('click', function () {
+        $('#btn-delete').on('click', function () {  // btn-update 란 id 를 가진 HTML 엘리먼트에 click 이벤트가 발생할 때 update function 을 실행하도록 이벤트를 등록
             _this.delete();
         });
     },
@@ -30,12 +30,12 @@ var main = {    // 변수의 속성으로 function 을 추가한 이유
             data: JSON.stringify(data)
         }).done(function() {
             alert('글이 등록되었습니다.');
-            window.location.href = '/';
+            window.location.href = '/';     // 글 등록이 성공하면 메인페이지(/)로 이동
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
     },
-    update : function () {
+    update : function () {  // 위에서 등록했던 update function
         var data = {
             title: $('#title').val(),
             content: $('#content').val()
@@ -45,13 +45,13 @@ var main = {    // 변수의 속성으로 function 을 추가한 이유
 
         $.ajax({
             type: 'PUT',
-            url: '/api/v1/posts/'+id,
+            url: '/api/v1/posts/'+id,   // 어느 게시글을 수정할지 URL Path 로 구분하기 위해 Path 에 id 를 추가
             dataType: 'json',
             contentType:'application/json; charset=utf-8',
             data: JSON.stringify(data)
         }).done(function() {
             alert('글이 수정되었습니다.');
-            window.location.href = '/';    // 글 등록이 성공하면 메인페이지(/)로 이동
+            window.location.href = '/';    // 글 수정이 성공하면 메인페이지(/)로 이동
         }).fail(function (error) {
             alert(JSON.stringify(error));
         });
